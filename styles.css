@@ -1,0 +1,130 @@
+/* ******************** HEADER SECTION - START ******************** */
+header {
+  background: linear-gradient(to right, #a92655, #fd8d67);
+}
+
+/* Left Column - Start */
+h1,
+h1 > span {
+  line-height: 0.8 !important;
+}
+
+.btn-outline-light img {
+  transition: filter 0.2s ease;
+}
+
+.btn-outline-light:hover img {
+  filter: brightness(0);
+}
+/* Left Column - End */
+
+/* Right Column - Start */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 384 / 799;
+  filter: drop-shadow(0 0 4px black);
+  
+  transform-origin: bottom center;
+  transform: translateY(40px) scale(0);
+  transition: transform 1.2s ease;
+}
+
+.phone.show {
+  transform: translateY(40px) scale(1);
+}
+
+.phoneCover {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  aspect-ratio: 384 / 799;
+  pointer-events: none;
+}
+
+.closeButton > img {
+  height: 80px;
+  z-index: 0;
+  aspect-ratio: 7 / 100;
+}
+
+.closeButton {
+  position: absolute;
+  top: 150px;
+  right: -10px;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+
+  cursor: pointer;
+  z-index: 0;
+  transition: right 0.2s ease;
+  animation: nudge 3s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+
+.closeButton.clicked {
+  right: -8px;
+}
+
+.pulse {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-50%) scale(2.2);
+    opacity: 0;
+  }
+}
+
+.screens {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  height: 100%;
+  aspect-ratio: 360 / 799;
+  pointer-events: none;
+}
+
+.screens > img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  aspect-ratio: 360 / 799;
+}
+
+.phoneScreenOpen {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.phoneScreenOpen.open {
+  opacity: 1;
+}
+/* Right Column - End */
+/* ******************** HEADER SECTION - END ******************** */

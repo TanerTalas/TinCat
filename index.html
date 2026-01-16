@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TinCat</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!-- Header - Start -->
+    <header data-bs-theme="dark">
+      <div class="container overflow-y-hidden">
+        <div class="row vh-100">
+          <div class="col-12 col-md-6 align-self-center">
+            <h1 class="display-3 fw-bold text-light mb-3">
+              TinCat <br />
+              <span class="display-5 fw-medium fst-italic text-light-emphasis"
+                >Find your cat's perfect match</span
+              >
+            </h1>
+            <p class="display-6 text-light mb-5">
+              Meet adorable cats around you
+            </p>
+            <div class="row">
+              <div class="col-12 d-flex gap-3 justify-content-center">
+                <button class="btn btn-light btn-lg d-flex gap-2">
+                  <img src="./images/download/ios.svg" alt="" />Download
+                </button>
+                <button class="btn btn-outline-light btn-lg d-flex gap-2">
+                  <img src="./images/download/android.svg" alt="" />Download
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 d-none d-md-flex justify-content-center align-self-end"
+          >
+            <div class="phone">
+              <div class="screens">
+                <img
+                  class="phoneScreenClose"
+                  src="./images/phone/screen_close.svg"
+                  alt=""
+                />
+                <img
+                  class="phoneScreenOpen"
+                  src="./images/phone/screen_open.svg"
+                  alt=""
+                />
+              </div>
+              <img class="phoneCover" src="./images/phone/iphone.svg" alt="" />
+              <button class="closeButton" aria-label="Turn phone on/off">
+                <img src="./images/phone/closeButton.svg" alt="" />
+                <span class="pulse"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header - End -->
+
+    <!-- Feature - Start -->
+    <div class="min-vh-100"></div>
+    <!-- Feature - End -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
