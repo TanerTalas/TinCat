@@ -15,15 +15,14 @@
   </head>
   <body>
     <!-- Nav - Start -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark fixed-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand d-flex gap-2 fs-2 me-5 fw-bold" href="#"
-          ><img class="logo"
+          ><img
+            class="logo"
             src="./images/logo.svg"
             alt="TinCat Logo"
-            style="width: calc(1.325rem + .9vw)"
+            style="width: calc(1.325rem + 0.9vw)"
           />TinCat</a
         >
         <button
@@ -40,13 +39,25 @@
         <div class="collapse navbar-collapse fs-5" id="navbarMenu">
           <ul class="navbar-nav gap-3 me-auto">
             <li class="nav-item">
-              <a class="nav-link text-end active" aria-current="page" href="#">Home</a>
+              <a class="nav-link text-end active" aria-current="page" href="#"
+                >Home</a
+              >
             </li>
-            <li class="nav-item"><a class="nav-link text-end" href="#">Features</a></li>
-            <li class="nav-item"><a class="nav-link text-end" href="#">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link text-end" href="#">Safety</a></li>
-            <li class="nav-item"><a class="nav-link text-end" href="#">Support</a></li>
-            <li class="nav-item"><a class="nav-link text-end" href="#">Download</a></li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#">Safety</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#">Download</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -55,9 +66,9 @@
 
     <!-- Header - Start -->
     <header data-bs-theme="dark">
-      <div class="container overflow-y-hidden header-container">
-        <div class="row vh-100">
-          <div class="col-12 col-md-6 align-self-center">
+      <div class="container overflow-y-hidden header-container py-5">
+        <div class="row row-cols-1 row-cols-md-2 min-vh-100">
+          <div class="col align-self-center">
             <h1 class="display-2 fw-bold text-light mb-3">
               TinCat <br />
               <span class="display-5 fw-medium fst-italic text-light-emphasis"
@@ -79,7 +90,7 @@
             </div>
           </div>
           <div
-            class="col-6 d-none d-md-flex justify-content-center align-self-end"
+            class="col d-none d-md-flex justify-content-center align-self-end"
           >
             <div class="phone">
               <div class="screens">
@@ -107,8 +118,108 @@
     <!-- Header - End -->
 
     <!-- Feature - Start -->
-    <section class="bg-light min-vh-100">
+    <section class="bg-light">
+      <div class="container feature-section">
+        <div class="row min-vh-100 align-items-md-center gx-5 gy-3 py-5">
+          <!-- Left Column - Start -->
+          <div
+            class="col-12 col-lg-6 d-flex flex-column align-items-start gap-2"
+          >
+            <h2 class="display-5 fw-bold text-dark mb-3">
+              Connecting Cat Lovers Everywhere
+            </h2>
+            <p class="fs-5 text-body-secondary mb-0">
+              From personalized recommendations to interactive profiles, TinCat
+              makes discovering new feline friends effortless and enjoyable.
+            </p>
+          </div>
+          <!-- Left Column - End -->
 
+          <!-- Right Column - Start -->
+          <div class="col-12 col-lg-6">
+            <div class="row g-3 g-lg-5">
+              <!-- Feature 1 -->
+              <div class="col-12 col-lg-6 d-flex flex-column gap-2">
+                <div
+                  class="d-flex flex-lg-column gap-2 align-items-center align-items-lg-start"
+                >
+                  <div
+                    class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3"
+                  >
+                    <img src="./images/features/personalized.svg" alt="" />
+                  </div>
+                  <h3 class="fw-semibold mb-0 text-body-emphasis">
+                    Personalized Recommendations
+                  </h3>
+                </div>
+                <p class="text-body-secondary">
+                  Get tailored cat matches based on your preferences and
+                  location.
+                </p>
+              </div>
+              <!-- Feature 2 -->
+              <div class="col-12 col-lg-6 d-flex flex-column gap-2 aFeature">
+                <div
+                  class="d-flex flex-lg-column gap-2 align-items-center align-items-lg-start"
+                >
+                  <div
+                    class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3"
+                  >
+                    <img src="./images/features/profiles.svg" alt="" />
+                  </div>
+                  <h3 class="fw-semibold mb-0 text-body-emphasis">
+                    Interactive Profiles
+                  </h3>
+                </div>
+
+                <p class="text-body-secondary">
+                  Explore detailed profiles with photos, personality traits, and
+                  fun facts.
+                </p>
+              </div>
+              <!-- Feature 3 -->
+              <div class="col-12 col-lg-6 d-flex flex-column gap-2">
+                <div
+                  class="d-flex flex-lg-column gap-2 align-items-center align-items-lg-start"
+                >
+                  <div
+                    class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3"
+                  >
+                    <img src="./images/features/chat.svg" alt="" />
+                  </div>
+                  <h3 class="fw-semibold mb-0 text-body-emphasis">
+                    Instant Chat
+                  </h3>
+                </div>
+                <p class="text-body-secondary">
+                  Connect instantly with other cat lovers and chat safely
+                  in-app.
+                </p>
+              </div>
+              <!-- Feature 4 -->
+              <div class="col-12 col-lg-6 d-flex flex-column gap-2">
+                <div
+                  class="d-flex flex-lg-column gap-2 align-items-center align-items-lg-start"
+                >
+                  <div
+                    class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3"
+                  >
+                    <img src="./images/features/nearby.svg" alt="" />
+                  </div>
+                  <h3 class="fw-semibold mb-0 text-body-emphasis">
+                    Nearby Cats Finder
+                  </h3>
+                </div>
+                <p class="text-body-secondary">
+                  Discover adorable cats around your location and find your
+                  furry friend nearby.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column - End -->
+        </div>
+      </div>
     </section>
     <!-- Feature - End -->
 
