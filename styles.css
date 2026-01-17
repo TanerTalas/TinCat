@@ -3,6 +3,11 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --pink-color: rgb(255, 159, 175);
+  --pink-color-hover: rgb(255, 175, 188);
+}
+
 *,
 *::before,
 *::after {
@@ -22,11 +27,6 @@ header {
   top: 0;
   overflow: hidden;
   z-index: 1;
-}
-
-section {
-  position: relative;
-  z-index: 2;
 }
 
 header::before {
@@ -129,14 +129,15 @@ h1 > span {
 
 .pulse {
   position: absolute;
-  right: -12px;
+  right: -8px;
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 0, 153, 0.6);
   animation: pulse 2s ease-out infinite;
+  z-index: -1;
 }
 
 @keyframes pulse {
@@ -180,6 +181,11 @@ h1 > span {
 /* ******************** HEADER SECTION - END ******************** */
 
 /* ******************** FEATURES SECTION - START ******************** */
+#feature-section {
+  position: relative;
+  z-index: 2;
+}
+
 /* h2 and p */
 .gradient-header {
   background: linear-gradient(to right, #a92655, #fd8d67);
@@ -253,7 +259,10 @@ h1 > span {
 /* ******************** FEATURES SECTION - END ******************** */
 
 /* ******************** SAFETY SECTION - START ******************** */
-
+#safety-section {
+  position: relative;
+  z-index: 2;
+}
 
 .safetyIcon {
   width: 48px;
@@ -263,13 +272,49 @@ h1 > span {
   z-index: -1;
   opacity: 0.5;
   transform: rotate(-25deg);
-  filter: 
-    invert(34%)
-    sepia(85%)
-    saturate(2300%)
-    hue-rotate(330deg)
-    brightness(95%)
-    contrast(105%);
+  filter: invert(34%) sepia(85%) saturate(2300%) hue-rotate(330deg)
+    brightness(95%) contrast(105%);
+  pointer-events: none;
 }
 
 /* ******************** SAFETY SECTION - END ******************** */
+
+/* ******************** TESTIMONIALS SECTION - START ******************** */
+
+/* ******************** TESTIMONIALS SECTION - END ******************** */
+
+/* ******************** PRICING SECTION - START ******************** */
+#pricing-section {
+  position: relative;
+  z-index: 3;
+}
+
+/* Overriding primary */
+#pricing-section .border-primary {
+  border-color: var(--pink-color) !important;
+}
+
+#pricing-section .text-bg-primary {
+  background-color: var(--pink-color) !important;
+}
+
+#pricing-section .btn-outline-primary {
+  border-color: var(--pink-color);
+  color: var(--pink-color);
+}
+
+#pricing-section .btn-outline-primary:hover {
+  background-color: var(--pink-color);
+  color: white;
+}
+
+#pricing-section .btn-primary {
+  background-color: var(--pink-color);
+  border-color: var(--pink-color);
+}
+
+#pricing-section .btn-primary:hover {
+  background-color: var(--pink-color-hover);
+  border-color: var(--pink-color-hover);
+}
+/* ******************** PRICING SECTION - END ******************** */

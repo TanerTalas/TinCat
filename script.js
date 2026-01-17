@@ -29,32 +29,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ******************** Scrolling ********************
-  const header = document.querySelector(".header-container");
-  const navbar = document.querySelector("nav");
-  const logo = document.querySelector(".logo");
-  const minScale = 0.7;
+const header = document.querySelector(".header-container");
+const navbar = document.querySelector("nav");
+const logo = document.querySelector(".logo");
+const pricingSection = document.querySelector("#pricing-section");
+const minScale = 0.6;
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    const maxScroll = header.offsetHeight - 64;
-    // play with opactiy of header-container while scrolling
-    let opacity = Math.max(0, Math.min(1, 1 - scrollY / maxScroll));
-    header.style.opacity = opacity;
-    // scale header-container while scrolling
-    const progress = Math.min(scrollY / maxScroll, 1); // 0-1 arası
-    const scale = 1 - (1 - minScale) * progress;
-    header.style.transform = `scale(${scale})`;
-    // remove navbar-dark from nav element after maxScroll
-    if (scrollY >= maxScroll) {
-      navbar.classList.remove("navbar-dark");
-      navbar.classList.add("navbar-light");
-      logo.classList.add("darkLogo");
-    } else {
-      navbar.classList.add("navbar-dark");
-      navbar.classList.remove("navbar-light");
-      logo.classList.remove("darkLogo");
-    }
-  });
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const maxScroll = header.offsetHeight - 64;
+
+  // opacity header
+  let opacity = Math.max(0, Math.min(1, 1 - scrollY / maxScroll));
+  header.style.opacity = opacity;
+
+  // scale header
+  const progress = Math.min(scrollY / maxScroll, 1);
+  const scale = 1 - (1 - minScale) * progress;
+  header.style.transform = `scale(${scale})`;
+
+  // navigation navbar-dark class add or remove
+  const pricingTop = pricingSection.getBoundingClientRect().top;
+
+  if (pricingTop < 50) {
+    navbar.classList.add("navbar-dark");
+    navbar.classList.remove("navbar-light");
+    logo.classList.remove("darkLogo");
+
+  } else if (scrollY >= maxScroll) {
+    navbar.classList.remove("navbar-dark");
+    navbar.classList.add("navbar-light");
+    logo.classList.add("darkLogo");
+
+  } else {
+    navbar.classList.add("navbar-dark");
+    navbar.classList.remove("navbar-light");
+    logo.classList.remove("darkLogo");
+  }
+});
+
 
 // ******************** Features & Fade ********************
 const animatedElements = document.querySelectorAll(".featureItem, .willFade");
