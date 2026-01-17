@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TinCat</title>
+    <link rel="icon" href="./images/logo.svg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js"></script>
@@ -258,7 +265,7 @@
 
     <!-- Safety - Start -->
     <section class="bg-light" id="safety-section">
-      <div class="container min-vh-100 d-flex py-5">
+      <div class="container min-vh-100 d-flex pt-5">
         <div class="row align-items-md-center gx-5 gy-3">
           <!-- Right Column - Start -->
           <div
@@ -379,9 +386,35 @@
 
     <!-- Testimonials - Start -->
     <section class="bg-light" id="testimonials-section">
+      <div class="container py-5 text-center willFade">
+        <p class="display-5 text-body-emphasis mb-4">
+          “I stopped chasing laser dots for love. I found my purr-fect match on
+          TinCat.”
+        </p>
+        <div class="d-flex flex-column align-items-center mb-5">
+          <img
+            class="rounded-circle profile-img"
+            src="./images/testimonials/cat.svg"
+            alt="Cat image"
+          />
+          <p class="col-lg-8 mx-auto lead mt-2">Midnight, New York</p>
+        </div>
 
+        <div class="tag-list">
+          <div class="tag-track fredoka">
+            <span class="brand tag fs-2">MeowNews</span>
+            <span class="brand tag fs-2">Catify</span>
+            <span class="brand tag fs-2">Purify</span>
+            <span class="brand tag fs-2">Felineo</span>
+            <span class="brand tag fs-2">Pawtify</span>
+            <span class="brand tag fs-2">Meowly</span>
+            <span class="brand tag fs-2">Kittya</span>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Testimonials - End -->
+
     <!-- Pricing - Start -->
     <section class="bg-dark" id="pricing-section" data-bs-theme="dark">
       <div class="container py-5">
@@ -433,7 +466,7 @@
                   <li>Advanced safety controls</li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
-                  Get started
+                  Unlock Plus
                 </button>
               </div>
             </div>
@@ -455,7 +488,7 @@
                   <li>Premium safety & privacy tools</li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
-                  Contact us
+                  Unlock Premium
                 </button>
               </div>
             </div>
@@ -464,7 +497,7 @@
         <!-- Plans - End -->
 
         <!-- Compare - Start -->
-        <h2 class="display-4 text-body text-center mb-4">Compare plans</h2>
+        <h3 class="display-4 text-body text-center mb-4">Compare plans</h3>
         <div class="table-responsive">
           <table class="table text-center">
             <thead>
@@ -644,6 +677,7 @@
       </div>
     </section>
     <!-- Pricing - End -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

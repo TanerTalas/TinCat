@@ -29,71 +29,99 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ******************** Scrolling ********************
-const header = document.querySelector(".header-container");
-const navbar = document.querySelector("nav");
-const logo = document.querySelector(".logo");
-const pricingSection = document.querySelector("#pricing-section");
-const minScale = 0.6;
+  const header = document.querySelector(".header-container");
+  const navbar = document.querySelector("nav");
+  const logo = document.querySelector(".logo");
+  const pricingSection = document.querySelector("#pricing-section");
+  const minScale = 0.6;
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const maxScroll = header.offsetHeight - 64;
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const maxScroll = header.offsetHeight - 64;
 
-  // opacity header
-  let opacity = Math.max(0, Math.min(1, 1 - scrollY / maxScroll));
-  header.style.opacity = opacity;
+    // opacity header
+    let opacity = Math.max(0, Math.min(1, 1 - scrollY / maxScroll));
+    header.style.opacity = opacity;
 
-  // scale header
-  const progress = Math.min(scrollY / maxScroll, 1);
-  const scale = 1 - (1 - minScale) * progress;
-  header.style.transform = `scale(${scale})`;
+    // scale header
+    const progress = Math.min(scrollY / maxScroll, 1);
+    const scale = 1 - (1 - minScale) * progress;
+    header.style.transform = `scale(${scale})`;
 
-  // navigation navbar-dark class add or remove
-  const pricingTop = pricingSection.getBoundingClientRect().top;
+    // navigation navbar-dark class add or remove
+    const pricingTop = pricingSection.getBoundingClientRect().top;
 
-  if (pricingTop < 50) {
-    navbar.classList.add("navbar-dark");
-    navbar.classList.remove("navbar-light");
-    logo.classList.remove("darkLogo");
-
-  } else if (scrollY >= maxScroll) {
-    navbar.classList.remove("navbar-dark");
-    navbar.classList.add("navbar-light");
-    logo.classList.add("darkLogo");
-
-  } else {
-    navbar.classList.add("navbar-dark");
-    navbar.classList.remove("navbar-light");
-    logo.classList.remove("darkLogo");
-  }
-});
-
-
-// ******************** Features & Fade ********************
-const animatedElements = document.querySelectorAll(".featureItem, .willFade");
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-
-      // featureItem pop animation
-      if (el.classList.contains("featureItem")) {
-        setTimeout(() => {
-          el.classList.add("feature-pop");
-        }, index * 300);
-      }
-
-      // willFade, fade-scale animation
-      if (el.classList.contains("willFade")) {
-        el.classList.add("fade-scale");
-      }
-
-      observer.unobserve(el); // Will only be triggered once
+    if (pricingTop < 50) {
+      navbar.classList.add("navbar-dark");
+      navbar.classList.remove("navbar-light");
+      logo.classList.remove("darkLogo");
+    } else if (scrollY >= maxScroll) {
+      navbar.classList.remove("navbar-dark");
+      navbar.classList.add("navbar-light");
+      logo.classList.add("darkLogo");
+    } else {
+      navbar.classList.add("navbar-dark");
+      navbar.classList.remove("navbar-light");
+      logo.classList.remove("darkLogo");
     }
   });
-}, { threshold: 0.5 });
 
-animatedElements.forEach(el => observer.observe(el));
+  // ******************** Features & Fade ********************
+  const animatedElements = document.querySelectorAll(".featureItem, .willFade");
 
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+
+          // featureItem pop animation
+          if (el.classList.contains("featureItem")) {
+            setTimeout(() => {
+              el.classList.add("feature-pop");
+            }, index * 300);
+          }
+
+          // willFade, fade-scale animation
+          if (el.classList.contains("willFade")) {
+            el.classList.add("fade-scale");
+          }
+
+          observer.unobserve(el); // Will only be triggered once
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  animatedElements.forEach((el) => observer.observe(el));
+
+  // ******************** Testimonial - Brands Loop (npm used) ********************
+  const track = document.querySelector(".tag-track");
+  const items = Array.from(track.children);
+
+  // Cloning until the viewport is full
+  let trackWidth = track.scrollWidth;
+  const viewportWidth = window.innerWidth;
+
+  while (trackWidth < viewportWidth * 2) {
+    items.forEach((item) => {
+      const clone = item.cloneNode(true);
+      track.appendChild(clone);
+    });
+    trackWidth = track.scrollWidth;
+  }
+
+  // GSAP infinite loop (NO GAP)
+  gsap.to(track, {
+    x: () => `-${track.scrollWidth / 2}px`,
+    duration: 30,
+    ease: "none",
+    repeat: -1,
+    modifiers: {
+      x: gsap.utils.unitize((x) => {
+        return parseFloat(x) % (track.scrollWidth / 2);
+      }),
+    },
+  });
 });

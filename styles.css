@@ -15,6 +15,17 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.fredoka {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.60);
+}
+
 /* ******************** NAV SECTION - START ******************** */
 .darkLogo {
   filter: invert(1);
@@ -280,6 +291,31 @@ h1 > span {
 /* ******************** SAFETY SECTION - END ******************** */
 
 /* ******************** TESTIMONIALS SECTION - START ******************** */
+#testimonials-section {
+  position: relative;
+  z-index: 3;
+}
+
+.brand {
+  letter-spacing: .05em;
+  opacity: .6;
+}
+
+.tag-list {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tag-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+}
+
+.tag {
+  white-space: nowrap;
+}
+
 
 /* ******************** TESTIMONIALS SECTION - END ******************** */
 
@@ -287,6 +323,14 @@ h1 > span {
 #pricing-section {
   position: relative;
   z-index: 3;
+}
+
+#pricing-section .card {
+  transition: transform .4s ease;
+}
+
+#pricing-section .card:hover {
+  transform: scale(1.02);
 }
 
 /* Overriding primary */
