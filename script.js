@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header-container");
   const navbar = document.querySelector("nav");
   const logo = document.querySelector(".logo");
-  const minScale = 0.8;
+  const minScale = 0.7;
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;

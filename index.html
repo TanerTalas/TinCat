@@ -12,6 +12,37 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js"></script>
+    <script type="module">
+      import Lenis from "https://cdn.jsdelivr.net/npm/lenis@1.3.16/+esm";
+
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+      let lenis;
+
+      if (isDesktop) {
+        lenis = new Lenis({
+          duration: 1,
+          easing: (t) => 1 - Math.pow(1 - t, 4),
+          smoothWheel: true,
+          smoothTouch: false,
+          wheelMultiplier: 0.8,
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        document.addEventListener("click", (e) => {
+          const link = e.target.closest("a");
+          if (!link) return;
+
+          lenis.stop();
+          requestAnimationFrame(() => lenis.start());
+        });
+      }
+    </script>
   </head>
   <body class="overflow-x-hidden">
     <!-- Nav - Start -->
@@ -44,13 +75,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-end" href="#">Features</a>
+              <a class="nav-link text-end" href="#feature-section">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-end" href="#safety-section">Safety</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-end" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-end" href="#">Safety</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-end" href="#">Support</a>
@@ -66,7 +97,7 @@
 
     <!-- Header - Start -->
     <header data-bs-theme="dark">
-      <div class="container header-container">
+      <div class="container header-container" id="header-container">
         <div class="row row-cols-1 row-cols-md-2 min-vh-100">
           <div class="col align-self-center py-5">
             <h1 class="display-2 fw-bold text-light mb-3">
@@ -119,7 +150,7 @@
 
     <!-- Feature - Start -->
     <section class="bg-light">
-      <div class="container d-flex min-vh-100 feature-section py-5">
+      <div class="container d-flex min-vh-100 feature-section py-5" id="feature-section">
         <div class="row align-items-md-center gx-5 gy-3">
           <!-- Left Column - Start -->
           <div
@@ -130,7 +161,7 @@
                 >Connecting Cat Lovers Everywhere</span
               >
             </h2>
-            <p class="fs-5 text-body-secondary mb-0 willFade">
+            <p class="fs-5 text-body-secondary willFade">
               From personalized recommendations to interactive profiles, TinCat
               makes discovering new feline friends effortless and enjoyable.
             </p>
@@ -224,6 +255,127 @@
       </div>
     </section>
     <!-- Feature - End -->
+
+    <!-- Safety - Start -->
+    <section class="bg-light">
+      <div class="container d-flex min-vh-100 py-5" id="safety-section">
+        <div class="row align-items-md-center gx-5 gy-3">
+          <!-- Right Column - Start -->
+          <div
+            class="col-12 col-lg-6 d-flex flex-column align-items-start gap-2 order-1 order-lg-2"
+          >
+            <h2 class="display-5 fw-bold text-dark mb-3 willFade">
+              <span class="gradient-header"
+                >A Safe Space for Every Cat Lover</span
+              >
+            </h2>
+            <p class="fs-5 text-body-secondary willFade">
+              From verified profiles to secure chats, TinCat helps you connect
+              in a friendly and protected environment.
+            </p>
+          </div>
+          <!-- Right Column - End -->
+
+          <!-- Left Column - Start -->
+          <div class="col-12 col-lg-6 order-2 order-lg-1">
+            <div class="row g-3 g-lg-5">
+              <!-- Safety 1 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Verified Profiles
+                </h3>
+                <p class="text-body-secondary">
+                  Get tailored cat matches based on your preferences and
+                  location.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+              <!-- Safety 2 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Secure In-App Chat
+                </h3>
+                <p class="text-body-secondary">
+                  Explore detailed profiles with photos, personality traits, and
+                  fun facts.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+              <!-- Safety 3 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Report & Block System
+                </h3>
+                <p class="text-body-secondary">
+                  Connect instantly with other cat lovers and chat safely
+                  in-app.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+              <!-- Safety 4 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Location Privacy
+                </h3>
+                <p class="text-body-secondary">
+                  Discover adorable cats around your location and find your
+                  furry friend nearby.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+              <!-- Safety 5 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Data Protection
+                </h3>
+                <p class="text-body-secondary">
+                  Discover adorable cats around your location and find your
+                  furry friend nearby.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+              <!-- Safety 6 -->
+              <div class="col-6 col-lg-6 d-flex flex-column gap-2 featureItem">
+                <h3 class="fw-semibold mb-0 text-body-emphasis">
+                  Community Guidelines
+                </h3>
+                <p class="text-body-secondary">
+                  Discover adorable cats around your location and find your
+                  furry friend nearby.
+                </p>
+                <img
+                  class="safetyIcon"
+                  src="./images/safety/safety.svg"
+                  alt="Safety icon image"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Left Column - End -->
+        </div>
+      </div>
+    </section>
+    <!-- Safety - End -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
