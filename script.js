@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeButton.classList.toggle("clicked");
     }, 200);
   });
-  
+
   // ******************** Scrolling ********************
   const header = document.querySelector(".header-container");
   const navbar = document.querySelector("nav");
@@ -55,4 +55,32 @@ document.addEventListener("DOMContentLoaded", () => {
       logo.classList.remove("darkLogo");
     }
   });
+
+// ******************** Features & Fade ********************
+const animatedElements = document.querySelectorAll(".featureItem, .willFade");
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+
+      // featureItem pop animation
+      if (el.classList.contains("featureItem")) {
+        setTimeout(() => {
+          el.classList.add("feature-pop");
+        }, index * 300);
+      }
+
+      // willFade, fade-scale animation
+      if (el.classList.contains("willFade")) {
+        el.classList.add("fade-scale");
+      }
+
+      observer.unobserve(el); // Will only be triggered once
+    }
+  });
+}, { threshold: 0.5 });
+
+animatedElements.forEach(el => observer.observe(el));
+
 });

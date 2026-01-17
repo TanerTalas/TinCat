@@ -1,19 +1,19 @@
 html {
-    box-sizing: border-box;
-    scroll-padding-top: 72px;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-padding-top: 72px;
+  scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 /* ******************** NAV SECTION - START ******************** */
 .darkLogo {
-    filter: invert(1);
+  filter: invert(1);
 }
 /* ******************** NAV SECTION - END ******************** */
 
@@ -22,13 +22,13 @@ header {
   position: sticky;
   top: 0;
   overflow: hidden;
-  z-index: 1;  
+  z-index: 1;
 }
 
 section {
-    position: sticky;
-    top: 0;
-    z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 header::before {
@@ -182,10 +182,48 @@ h1 > span {
 /* ******************** HEADER SECTION - END ******************** */
 
 /* ******************** FEATURES SECTION - START ******************** */
+/* h2 and p */
+.gradient-header {
+  background: linear-gradient(to right, #a92655, #fd8d67);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% 500%;
+  animation: gradientShift 6s ease infinite;
+}
+
+.willFade {
+  opacity: 0;
+}
+
+.fade-scale {
+  transform: scale(0.95);
+  animation: fadeScale 0.8s ease forwards;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* features */
 .feature-icon-small {
-    background: linear-gradient(to right, #a92655, #fd8d67);
-    width: 3rem;
-    height: 3rem;
+  background: linear-gradient(to right, #a92655, #fd8d67);
+  width: 3rem;
+  height: 3rem;
 }
 
 .feature-icon-small > img {
@@ -193,4 +231,19 @@ h1 > span {
   pointer-events: none;
 }
 
+.feature-pop {
+  animation: popScale 0.6s ease forwards;
+}
+
+@keyframes popScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* ******************** FEATURES SECTION - END ******************** */
