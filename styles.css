@@ -1,7 +1,20 @@
+/* ******************** NAV SECTION - START ******************** */
+.darkLogo {
+    filter: invert(1);
+}
+/* ******************** NAV SECTION - END ******************** */
+
 /* ******************** HEADER SECTION - START ******************** */
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
   overflow: hidden;
+  z-index: 1;  
+}
+
+section {
+    position: sticky;
+    z-index: 2;
 }
 
 header::before {
