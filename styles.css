@@ -398,6 +398,14 @@ h1 > span {
   z-index: 2;
 }
 
+#support-section .gradient-header {
+  background: linear-gradient(to right, #26a938, #fdc367);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% 500%;
+  animation: gradientShift 6s ease infinite;
+}
+
 #support-section .btn-primary {
   background-color: #fd6767;
   border-color: #fd6767;
