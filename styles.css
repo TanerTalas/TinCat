@@ -5,7 +5,7 @@ html {
 
 :root {
   --pink-color: rgb(255, 159, 175);
-  --pink-color-hover: rgb(255, 175, 188);
+  --pink-color-hover: rgb(251, 180, 192);
 }
 
 *,
@@ -302,20 +302,41 @@ h1 > span {
 }
 
 .tag-list {
+  position: relative;
   overflow: hidden;
   width: 100%;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
 }
 
 .tag-track {
   display: flex;
   gap: 4rem;
   width: max-content;
+  height: 64px; 
+  align-items: center;
 }
 
 .tag {
   white-space: nowrap;
 }
 
+.fade-mask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    rgb(248, 249, 250) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgb(248, 249, 250) 100%
+  );
+}
 
 /* ******************** TESTIMONIALS SECTION - END ******************** */
 
