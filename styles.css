@@ -15,7 +15,11 @@ html {
   margin: 0;
   padding: 0;
 }
-
+/* 
+* {
+  outline: 1px solid red;
+} THIS IS FOR TESTING
+*/
 .fredoka {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
@@ -244,8 +248,10 @@ h1 > span {
 
 /* features */
 .featureItem {
+  position: relative;
   opacity: 0;
   transition: opacity 0.6s ease;
+  overflow: hidden;
 }
 
 .feature-icon-small {
