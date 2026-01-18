@@ -1,4 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ******************** Navbar section observer ********************
+  const sections = document.querySelectorAll(
+    "#feature-section, #safety-section, #pricing-section, #support-section"
+  );
+  const navLinks = document.querySelectorAll(".js-nav-link");
+  const homeLink = document.querySelector(".js-nav-home");
+  let visibleSections = new Set();
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+        const link = document.querySelector(`a[href="#${id}"]`);
+
+        if (entry.isIntersecting) {
+          visibleSections.add(id);
+
+          navLinks.forEach((l) => l.classList.remove("active"));
+          homeLink.classList.remove("active");
+
+          link.classList.add("active");
+        } else {
+          visibleSections.delete(id);
+        }
+      });
+
+      // If none of the sections visible, then home will be active
+      if (visibleSections.size === 0) {
+        navLinks.forEach((l) => l.classList.remove("active"));
+        homeLink.classList.add("active");
+      }
+    },
+    {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px", 
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+  // ******************** Navigation download button and header download buttons ********************
+  const trigger = document.querySelector(".js-download-trigger");
+  const downloadButtons = document.querySelectorAll(".download-btn");
+
+  trigger.addEventListener("click", () => {
+    setTimeout(() => {
+      downloadButtons.forEach((btn) => {
+        btn.classList.add("is-pulsing");
+        setTimeout(() => {
+          btn.classList.remove("is-pulsing");
+        }, 400);
+      });
+    }, 400);
+  });
+
   // ******************** Phone ********************
   const phone = document.querySelector(".phone");
   const screen = document.querySelector(".phoneScreenOpen");

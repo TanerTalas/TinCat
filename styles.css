@@ -77,6 +77,15 @@ h1 > span {
 .btn-outline-light:hover img {
   filter: brightness(0);
 }
+
+.download-btn {
+  transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+}
+
+.download-btn.is-pulsing {
+  transform: scale(1.1);
+}
+
 /* Left Column - End */
 
 /* Right Column - Start */
