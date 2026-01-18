@@ -410,3 +410,15 @@ h1 > span {
   background-color: #fd6767;
   border-color: #fd6767;
 }
+/* ******************** SUPPORT SECTION - END ******************** */
+
+/* ******************** FOOTER SECTION - START ******************** */
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+footer li>a:hover {
+  color: black !important;
+}
+/* ******************** FOOTER SECTION - END ******************** */
