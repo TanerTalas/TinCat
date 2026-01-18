@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedElements.forEach((el) => observer.observe(el));
 
-  // ******************** Testimonial - Brands Loop (npm used) ********************
+  // ******************** Testimonial - Brands Loop (npm) ********************
   const track = document.querySelector(".tag-track");
   const items = Array.from(track.children);
 
