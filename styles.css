@@ -431,3 +431,9 @@ footer li>a:hover {
   color: black !important;
 }
 /* ******************** FOOTER SECTION - END ******************** */
+
+/* ******************** REMINDER MODAL SECTION - START ******************** */
+.reminder-title::after {
+  content: "🐾";
+  margin-left: .4rem;
+}
