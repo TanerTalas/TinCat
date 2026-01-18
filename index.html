@@ -84,7 +84,10 @@
     <!-- Nav - Start -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand d-flex gap-2 fs-2 me-5 fw-bold fredoka" href="#"
+        <a
+          class="navbar-brand d-flex gap-2 fs-2 me-5 fw-bold fredoka"
+          href="#"
+          aria-label="TinCat logo, jumps to top of the page"
           ><img
             class="logo"
             src="./images/logo.svg"
@@ -134,7 +137,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-end js-download-trigger" href="#"
+              <a
+                class="nav-link text-end js-download-trigger"
+                href="#"
+                aria-label="Download link, jumps to header download buttons"
                 >Download</a
               >
             </li>
@@ -164,6 +170,7 @@
                   class="btn btn-light btn-lg d-flex gap-2 download-btn"
                   data-bs-toggle="modal"
                   data-bs-target="#reminder"
+                  aria-label="Download for ios devices."
                 >
                   <img src="./images/download/ios.svg" alt="" />Download
                 </button>
@@ -171,6 +178,7 @@
                   class="btn btn-outline-light btn-lg d-flex gap-2 download-btn"
                   data-bs-toggle="modal"
                   data-bs-target="#reminder"
+                  aria-label="Download for android devices."
                 >
                   <img src="./images/download/android.svg" alt="" />Download
                 </button>
@@ -193,8 +201,15 @@
                   alt=""
                 />
               </div>
-              <img class="phoneCover" src="./images/phone/iphone.svg" alt="" />
-              <button class="closeButton" aria-label="Turn phone on/off">
+              <img
+                class="phoneCover"
+                src="./images/phone/iphone.svg"
+                alt="Phone Cover"
+              />
+              <button
+                class="closeButton"
+                aria-label="Toggle the displayed phone on and off"
+              >
                 <img src="./images/phone/closeButton.svg" alt="" />
                 <span class="pulse"></span>
               </button>
@@ -341,7 +356,7 @@
                 <h3 class="fw-semibold mb-0 text-body-emphasis">
                   Verified Profiles
                 </h3>
-                <p class="text-body-secondary">
+                <p class="text-body-secondary" aria>
                   Get tailored cat matches based on your preferences and
                   location.
                 </p>
@@ -441,18 +456,23 @@
           “I stopped chasing laser dots for love. I found my purr-fect match on
           TinCat.”
         </p>
-        <div class="d-flex flex-column align-items-center mb-5">
+        <figure
+          class="d-flex flex-column align-items-center mb-5"
+          aria-label="Testimonial from Midnight, New York"
+        >
           <img
             class="rounded-circle profile-img"
             src="./images/testimonials/cat.svg"
-            alt="Cat image"
+            alt="Photo of Midnight, a cat from New York"
           />
-          <p class="col-lg-8 mx-auto lead mt-2">Midnight, New York</p>
-        </div>
+          <figcaption class="col-lg-8 mx-auto lead mt-2">
+            Midnight, New York
+          </figcaption>
+        </figure>
 
         <div class="tag-list">
           <div class="fade-mask"></div>
-          <div class="tag-track fredoka">
+          <div class="tag-track fredoka" aria-label="Brands sponsoring TinCat">
             <span class="brand tag fs-2">MeowNews</span>
             <span class="brand tag fs-2">Catify</span>
             <span class="brand tag fs-2">Purify</span>
@@ -486,7 +506,7 @@
                 <p class="card-title pricing-card-title fs-1 my-0">
                   $0<small class="text-body-secondary fw-light">/mo</small>
                 </p>
-                <ul class="list-unstyled mt-3 mb-4">
+                <ul class="list-unstyled mt-3 mb-4" aria-label="Free Purr plan features">
                   <li>Limited daily cat matches</li>
                   <li>Basic cat profiles</li>
                   <li>Like and pass cats</li>
@@ -498,6 +518,7 @@
                   class="w-100 btn btn-lg btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#reminder"
+                  aria-label="Sign up for Free Purr plan (opens modal)"
                 >
                   Sign up for free
                 </button>
@@ -513,7 +534,7 @@
                 <p class="card-title pricing-card-title fs-1 my-0">
                   $6<small class="text-body-secondary fw-light">/mo</small>
                 </p>
-                <ul class="list-unstyled mt-3 mb-4">
+                <ul class="list-unstyled mt-3 mb-4" aria-label="Purr Plus plan features">
                   <li>Unlimited cat matches</li>
                   <li>See who liked your cat</li>
                   <li>Full profile details</li>
@@ -525,6 +546,7 @@
                   class="w-100 btn btn-lg btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#reminder"
+                  aria-label="Unlock Purr Plus plan (opens modal)"
                 >
                   Unlock Plus
                 </button>
@@ -540,7 +562,7 @@
                 <p class="card-title pricing-card-title fs-1 my-0">
                   $12<small class="text-body-secondary fw-light">/mo</small>
                 </p>
-                <ul class="list-unstyled mt-3 mb-4">
+                <ul class="list-unstyled mt-3 mb-4" aria-label="Purr Premium plan features">
                   <li>Priority cat matches</li>
                   <li>Boost your cat profile</li>
                   <li>Advanced match filters</li>
@@ -552,6 +574,7 @@
                   class="w-100 btn btn-lg btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#reminder"
+                  aria-label="Unlock Purr Premium plan (opens modal)"
                 >
                   Unlock Premium
                 </button>
@@ -567,6 +590,7 @@
         </h2>
         <div class="table-responsive">
           <table class="table text-center">
+            <caption>Comparison of TinCat subscription plans: Free Purr, Purr Plus, Purr Premium</caption>
             <thead>
               <tr>
                 <th style="width: 34%"></th>
@@ -592,6 +616,7 @@
                     fill="currentColor"
                     class="bi bi-x-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Not included"
                   >
                     <path
                       d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
@@ -606,6 +631,7 @@
                     fill="currentColor"
                     class="bi bi-check-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Included"
                   >
                     <path
                       d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"
@@ -620,6 +646,7 @@
                     fill="currentColor"
                     class="bi bi-check-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Included"
                   >
                     <path
                       d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"
@@ -651,6 +678,7 @@
                     fill="currentColor"
                     class="bi bi-x-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Not included"
                   >
                     <path
                       d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
@@ -665,6 +693,7 @@
                     fill="currentColor"
                     class="bi bi-x-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Not included"
                   >
                     <path
                       d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
@@ -679,6 +708,7 @@
                     fill="currentColor"
                     class="bi bi-check-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Included"
                   >
                     <path
                       d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"
@@ -696,6 +726,7 @@
                     fill="currentColor"
                     class="bi bi-x-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Not included"
                   >
                     <path
                       d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
@@ -710,6 +741,7 @@
                     fill="currentColor"
                     class="bi bi-x-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Not included"
                   >
                     <path
                       d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
@@ -724,6 +756,7 @@
                     fill="currentColor"
                     class="bi bi-check-lg"
                     viewBox="0 0 16 16"
+                    aria-label="Included"
                   >
                     <path
                       d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"
