@@ -41,26 +41,26 @@ header {
 }
 
 header::before {
-  z-index: -1;
   content: "";
   position: absolute;
-  top: 0;
-  left: -50%;
+  inset: 0;
   width: 200%;
-  height: 100%;
   background: linear-gradient(to right, #a92655, #fd8d67, #a92655);
+  transform: translateX(-50%);
   animation: moveGradient 12s linear infinite;
+  z-index: -1;
+  will-change: transform;
 }
 
 @keyframes moveGradient {
   0% {
-    left: -50%;
+    transform: translateX(-50%);
   }
   50% {
-    left: 0%;
+    transform: translateX(0%);
   }
   100% {
-    left: -50%;
+    transform: translateX(-50%);
   }
 }
 
