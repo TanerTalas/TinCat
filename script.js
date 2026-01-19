@@ -1,44 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ******************** Navbar section observer ********************
   const sections = document.querySelectorAll(
-    "#feature-section, #safety-section, #pricing-section, #support-section"
+    "#feature-section, #safety-section, #pricing-section, #support-section",
   );
+
   const navLinks = document.querySelectorAll(".js-nav-link");
   const homeLink = document.querySelector(".js-nav-home");
-  let visibleSections = new Set();
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
         const id = entry.target.id;
         const link = document.querySelector(`a[href="#${id}"]`);
 
-        if (entry.isIntersecting) {
-          visibleSections.add(id);
-
-          navLinks.forEach((l) => l.classList.remove("active"));
-          homeLink.classList.remove("active");
-
-          link.classList.add("active");
-        } else {
-          visibleSections.delete(id);
-        }
-      });
-
-      // If none of the sections visible, then home will be active
-      if (visibleSections.size === 0) {
         navLinks.forEach((l) => l.classList.remove("active"));
-        homeLink.classList.add("active");
-      }
+        homeLink.classList.remove("active");
+        link.classList.add("active");
+      });
     },
     {
-      root: null,
-      rootMargin: "-40% 0px -40% 0px", 
+      rootMargin: "-40% 0px -40% 0px",
       threshold: 0,
-    }
+    },
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < 50) {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      homeLink.classList.add("active");
+    }
+  });
+
   // ******************** Navigation download button and header download buttons ********************
   const trigger = document.querySelector(".js-download-trigger");
   const downloadButtons = document.querySelectorAll(".download-btn");
@@ -154,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   animatedElements.forEach((el) => observer.observe(el));
